@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="CWA Help Desk Appointment">
+    <meta name="keywords" content="CWA, Help, Desk, Appointment">
+    <meta name="author" content="Nguyen Anh Vu">
+    <title>CWA Help Desk Appointment</title>
+
+</head>
+
+<body>
+    <h1>CWA Help Desk Appointment</h1>
+    <p> Please fill out this form to request a help desk appointment for technical support.</p>
+
+    <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
+        <!--Note we have to use a special escape character to print an apostrophe on the Web page -->
+        <p> <label for="fullname">Full Name</label>
+            <input type="text" name="fullname" id="fullname" required="required" placeholder="Enter your full name" >
+        </p>
+        <p> <label for="email">Email</label>
+            <!--Use an HTML5 email control -->
+            <input type="email" name="email" id="email" required="required" placeholder="example@domain.com" >
+        </p>
+        <fieldset>
+            <legend>Issue Information Details</legend>
+            <p> <label for="issuetitle">Issue Title</label>
+                <input type="text" name="issuetitle" id="issuetitle" maxlength="20" size="10" required="required"
+                    placeholder="Short summary of your problem" >
+            </p>
+            <p> <label for="issuecategory">Issue Category</label>
+                <select name="issuecategory" id="issuecategory" required="required">
+                    <option value="">Please select</option>
+                    <option value="hardware">Hardware</option>
+                    <option value="software">Software</option>
+                    <option value="network">Network</option>
+                    <option value="account">Account</option>
+                    <option value="other">Other</option>
+                </select>
+            </p>
+            <p> <label for="date">Preferred Appointment Date</label>
+                <input type="date" name="date" id="date" size="10" >
+            </p>
+            <p> <label for="time">Preferred Appointment Time</label>
+                <input type="time" name="time" id="time" size="10" >
+            </p>
+            <fieldset>
+                <legend>Priority Level</legend>
+                <p> <label for="high">High</label>
+                    <input type="radio" id="high" name="priority" value="high" required="required" >
+                </p>
+                <p> <label for="medium">Medium</label>
+                    <input type="radio" id="medium" name="priority" value="medium" >
+                </p>
+                <p> <label for="low">Low</label>
+                    <input type="radio" id="low" name="priority" value="low" >
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Service Type</legend>
+                <p>Select All Ways that Apply</p>
+                <p> <label for="remote">Remote Assistance</label>
+                    <input type="checkbox" id="remote" name="category[]" value="remote" checked="checked" >
+                </p>
+                <p> <label for="onsite">On-site Support</label>
+                    <input type="checkbox" id="onsite" name="category[]" value="onsite" >
+                </p>
+                <p> <label for="consult">Consultant</label>
+                    <input type="checkbox" id="consult" name="category[]" value="consult" >
+                </p>
+            </fieldset>
+            <p> <label for="issuedescription">Issue Description</label>
+                <textarea id="issuedescription" name="issuedescription" rows="4" cols="40"
+                    placeholder="It is not required but we reccommended to describe the issue in detail"></textarea>
+            </p>
+        </fieldset>
+
+        <input type="submit" value="Register" >
+        <input type="reset" value="Reset Form" >
+    </form>
+    <footer>
+        <p>Thank you for using the CWA Help Desk.</p>
+        <img src="images/logo.png" alt="CWA Logo" width="150">
+    </footer>
+</body>
+
+</html>
+
+<!--
+    Nguyen Anh Vu hot boy B)
+    Student ID: 10621920 - SWS01703
+    Date: 30 October 2025
+-->
