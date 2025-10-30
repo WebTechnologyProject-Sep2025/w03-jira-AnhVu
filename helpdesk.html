@@ -7,81 +7,97 @@
     <meta name="keywords" content="CWA, Help, Desk, Appointment">
     <meta name="author" content="Nguyen Anh Vu">
     <title>CWA Help Desk Appointment</title>
-
 </head>
 
 <body>
+    <a href="https://www.swin.edu.au" target="_blank"> <img src="images/logo.png" alt="CWA Logo" width="150"> </a>
     <h1>CWA Help Desk Appointment</h1>
-    <p> Please fill out this form to request a help desk appointment for technical support.</p>
+    <p> The Help Desk is located in ATC620. Open 10:30 to 19:00 Monday to Friday</p>
+    <p>Check Blackboard for when CWA tutors will be there</p>
 
     <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
-        <!--Note we have to use a special escape character to print an apostrophe on the Web page -->
-        <p> <label for="fullname">Full Name</label>
-            <input type="text" name="fullname" id="fullname" required="required" placeholder="Enter your full name" >
-        </p>
-        <p> <label for="email">Email</label>
-            <!--Use an HTML5 email control -->
-            <input type="email" name="email" id="email" required="required" placeholder="example@domain.com" >
-        </p>
         <fieldset>
-            <legend>Issue Information Details</legend>
-            <p> <label for="issuetitle">Issue Title</label>
-                <input type="text" name="issuetitle" id="issuetitle" maxlength="20" size="10" required="required"
-                    placeholder="Short summary of your problem" >
+            <legend>Student Details</legend>
+            <p> <label for="studentid">Student ID</label>
+                <input type="text" name="studentid" id="studentid" pattern="[0-9]{7,10}" required="required"
+                    placeholder="Enter your student ID">
             </p>
-            <p> <label for="issuecategory">Issue Category</label>
-                <select name="issuecategory" id="issuecategory" required="required">
+            <span>
+                <label for="givenname">Given Name</label>
+                <input type="text" name="givenname" id="givenname" pattern="[A-za-z]{1,15}" required="required">
+
+                <label for="familyname">Family Name</label>
+                <input type="text" name="familyname" id="familyname" pattern="[A-za-z]{1,15}" required="required">
+            </span>
+        </fieldset>
+
+        <fieldset>
+            <legend>Course Unit</legend>
+            <span>
+                <label for="cos10011">COS10011</label>
+                <input type="radio" id="cos10011" name="course" value="cos10011" required="required">
+
+                <label for="cos60004">COS60004</label>
+                <input type="radio" id="cos60004" name="course" value="cos60004">
+
+                <label for="cos60007">COS60007</label>
+                <input type="radio" id="cos60007" name="course" value="cos60007">
+            </span>
+            <p> <label for="tutor">Your Tutor</label>
+                <select name="tutor" id="tutor" required="required">
                     <option value="">Please select</option>
-                    <option value="hardware">Hardware</option>
-                    <option value="software">Software</option>
-                    <option value="network">Network</option>
-                    <option value="account">Account</option>
+                    <option value="god">God</option>
+                    <option value="innervoice">Inner Voice</option>
+                    <option value="stackoverflow">Stack OverFlow</option>
+                    <option value="anime">Anime</option>
                     <option value="other">Other</option>
                 </select>
             </p>
-            <p> <label for="date">Preferred Appointment Date</label>
-                <input type="date" name="date" id="date" size="10" >
-            </p>
-            <p> <label for="time">Preferred Appointment Time</label>
-                <input type="time" name="time" id="time" size="10" >
-            </p>
-            <fieldset>
-                <legend>Priority Level</legend>
-                <p> <label for="high">High</label>
-                    <input type="radio" id="high" name="priority" value="high" required="required" >
-                </p>
-                <p> <label for="medium">Medium</label>
-                    <input type="radio" id="medium" name="priority" value="medium" >
-                </p>
-                <p> <label for="low">Low</label>
-                    <input type="radio" id="low" name="priority" value="low" >
-                </p>
-            </fieldset>
-            <fieldset>
-                <legend>Service Type</legend>
-                <p>Select All Ways that Apply</p>
-                <p> <label for="remote">Remote Assistance</label>
-                    <input type="checkbox" id="remote" name="category[]" value="remote" checked="checked" >
-                </p>
-                <p> <label for="onsite">On-site Support</label>
-                    <input type="checkbox" id="onsite" name="category[]" value="onsite" >
-                </p>
-                <p> <label for="consult">Consultant</label>
-                    <input type="checkbox" id="consult" name="category[]" value="consult" >
-                </p>
-            </fieldset>
-            <p> <label for="issuedescription">Issue Description</label>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Issue</legend>
+            <span>
+                <label for="html">HTML</label>
+                <input type="checkbox" id="html" name="category[]" value="html" checked="checked">
+
+                <label for="css">CSS</label>
+                <input type="checkbox" id="css" name="category[]" value="css">
+
+                <label for="javascript">JavaScript</label>
+                <input type="checkbox" id="javascript" name="category[]" value="javascript">
+
+                <label for="php">PHP</label>
+                <input type="checkbox" id="php" name="category[]" value="php">
+
+                <label for="mysql">My SQL</label>
+                <input type="checkbox" id="mysql" name="category[]" value="mysql">
+            </span>
+
+            <p> <label for="issuedescription">Issue Description<br></label>
                 <textarea id="issuedescription" name="issuedescription" rows="4" cols="40"
-                    placeholder="It is not required but we reccommended to describe the issue in detail"></textarea>
+                    placeholder="Describe the issue in detail"></textarea>
             </p>
         </fieldset>
 
-        <input type="submit" value="Register" >
-        <input type="reset" value="Reset Form" >
+        <fieldset>
+            <legend>Preferred Date/Time</legend>
+            <p> <label for="date">Preferred Appointment Date</label>
+                <input type="date" name="date" id="date" size="10">
+            </p>
+            <p> <label for="time">Preferred Appointment Time</label>
+                <input type="time" name="time" id="time" size="10">
+            </p>
+        </fieldset>
+
+
+
+        <input type="submit" value="Book">
+        <input type="reset" value="Reset Form">
     </form>
     <footer>
         <p>Thank you for using the CWA Help Desk.</p>
-        <img src="images/logo.png" alt="CWA Logo" width="150">
     </footer>
 </body>
 
@@ -89,6 +105,6 @@
 
 <!--
     Nguyen Anh Vu hot boy B)
-    Student ID: 10621920 - SWS01703
+    Student ID: 106221920 - SWS01703
     Date: 30 October 2025
 -->
